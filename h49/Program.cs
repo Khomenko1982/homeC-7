@@ -18,10 +18,11 @@ Console.Write("Введите число N : ");
 int N = Convert.ToInt32(Console.ReadLine());
 
 int[,] array = Fill2DArr(M, N, -10, 10);
-
+Console.WriteLine("Исходный массив : ");
 PrintArray(array); // Вызов метода печати массива
+Print2Array(array); // Вызов метода преобразованного массива
 Console.WriteLine("Преобразованный массив : ");
-Print2Array(array); // Вызов метода печати массива
+PrintArray(array); // Вызов метода печати массива
 
 // Метод возвращает двумерный массив [,] на size элементов 
 int[,] Fill2DArr(int rowsCount, int columnsCount, int lefts, int rights)
@@ -58,17 +59,17 @@ void PrintArray(int[,] array)
 // Матод печати двумерного массива
 void Print2Array(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i=i+2)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j=j+2)
         {
-            if (((i-1)%2==0) && ((j-1)%2==0))
-            {
+            // if (((i)%2==0) && ((j)%2==0))
+            // {
 array[i, j] =(array[i, j]*array[i, j]);
-            }
-            Console.Write(array[i, j] + " ");
+            // }
+            // Console.Write(array[i, j] + " ");
         }
-        Console.WriteLine();
+        // Console.WriteLine();
     }
-
+return;
 }
