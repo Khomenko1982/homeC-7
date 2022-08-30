@@ -59,12 +59,13 @@ void PrintAverageMath(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
    
-   averageMath[i]+=array[j,i];
+//    averageMath[i]+=array[j,i];
+   averageMath[j]+=array[i,j];
         }
       
      }
       Console.Write("Среднее арифметическое каждого столбца: ");
       foreach (double elem in averageMath)
-              Console.Write(elem/N + " ");
+              Console.Write(elem/M + " ");
 return;
 }
